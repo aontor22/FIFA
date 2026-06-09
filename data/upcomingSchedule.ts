@@ -12,8 +12,40 @@ export const upcomingFixtures: UpcomingFixture[] = [
 ];
 
 export const upcomingHighlights: UpcomingHighlight[] = [
-  { title: 'Expanded format', value: '48 teams', note: 'The largest men’s World Cup field so far.' },
-  { title: 'Total fixtures', value: '104 matches', note: 'A longer tournament journey from group stage to final.' },
-  { title: 'Host nations', value: '3 countries', note: 'Canada, Mexico and United States.' },
-  { title: 'Final venue', value: 'New York New Jersey', note: 'The final is planned for East Rutherford.' }
+  {
+    title: 'Expanded format',
+    value: '48 teams',
+    note: 'The largest men’s World Cup field so far.',
+    eyebrow: 'Tournament format',
+    date: '2026',
+    text: 'The first 48-team men’s World Cup creates a longer global tournament journey.',
+    image: '/media/generated/wc-2026-poster.svg'
+  },
+  {
+    title: 'Total fixtures',
+    value: '104 matches',
+    note: 'A longer tournament journey from group stage to final.',
+    eyebrow: 'Schedule scale',
+    date: 'June to July 2026',
+    text: 'The expanded fixture list covers group matches, a Round of 32, and the final.',
+    image: '/media/generated/history-2026.svg'
+  },
+  {
+    title: 'Host nations',
+    value: '3 countries',
+    note: 'Canada, Mexico and United States.',
+    eyebrow: 'Host network',
+    date: 'North America',
+    text: 'Canada, Mexico, and the United States combine for the first three-country edition.',
+    image: '/media/generated/hero-ball.svg'
+  },
+  {
+    title: 'Final venue',
+    value: 'New York New Jersey',
+    note: 'The final is planned for East Rutherford.',
+    eyebrow: 'Final stage',
+    date: 'July 19, 2026',
+    text: 'The final is planned for New York New Jersey Stadium in East Rutherford.',
+    image: '/media/generated/hero-trophy.svg'
+  }
 ];

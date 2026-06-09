@@ -61,6 +61,10 @@ export type UpcomingFixture = {
 
 export type UpcomingHighlight = {
   title: string;
-  value: string;
-  note: string;
+  value?: string;
+  note?: string;
+  eyebrow?: string;
+  date?: string;
+  text?: string;
+  image: string;
 };
