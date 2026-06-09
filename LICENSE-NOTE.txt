@@ -1,4 +1,1 @@
-This project is an unofficial educational/fan website template.
-It does not include official FIFA logos, official trophy photographs, player photos, match photos, or other proprietary FIFA media.
-All bundled history and trophy images are original SVG illustrations generated for this project.
-Use only properly licensed images if replacing the bundled assets.
+Unofficial educational website template. Do not use protected FIFA marks, logos, photos or broadcast graphics without proper permission. Historical data should be verified before commercial publication.

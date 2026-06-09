@@ -1,4 +1,6 @@
+
 import type { WorldCupEdition } from '@/lib/types';
+import { getEditionMedia } from '@/data/editionMedia';
 import { formatNumber } from '@/utils/format';
 
 type EditionCardProps = {
@@ -7,23 +9,27 @@ type EditionCardProps = {
 };
 
 export default function EditionCard({ cup, onSelect }: EditionCardProps) {
+  const media = getEditionMedia(cup.year);
+
   return (
-    <button className="edition-card visual-edition-card" onClick={onSelect}>
-      <div className="edition-image">
-        <img src={cup.image} alt={`${cup.year} ${cup.host} World Cup history illustration`} />
-        <img className="edition-trophy-mini" src={cup.trophyImage} alt={`${cup.year} trophy illustration`} />
+    <button className="edition-card edition-card-photo" onClick={onSelect}>
+      <div className="edition-photo-wrap">
+        <img className="edition-bg-img" src={media.historyImage} alt={`${cup.year} ${cup.host} World Cup visual`} loading="lazy" />
+        <div className="edition-photo-overlay" />
+        <div className="edition-photo-content">
+          <div>
+            <span className="edition-year">{cup.year}</span>
+            <h3>{cup.host}</h3>
+          </div>
+          <img className="edition-ball-thumb" src={media.ballImage} alt={`${media.ballName} match ball`} loading="lazy" />
+        </div>
       </div>
-      <div className="edition-card-top">
-        <span className="edition-year">{cup.year}</span>
-        <span className="edition-flag">{cup.hostFlag}</span>
-      </div>
-      <h3>{cup.host}</h3>
       <p>{cup.memorable}</p>
       <div className="mini-meta">
         <span>Winner: <strong>{cup.champion}</strong></span>
         <span>Final: <strong>{cup.finalScore}</strong></span>
-        <span>{cup.teams} teams</span>
-        <span>{formatNumber(cup.goals)} goals</span>
+        <span>Ball: <strong>{media.ballName}</strong></span>
+        <span>{cup.teams} teams • {formatNumber(cup.goals)} goals</span>
       </div>
     </button>
   );

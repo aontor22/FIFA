@@ -6,8 +6,6 @@ export type WorldCupEdition = {
   edition: number;
   host: string;
   hostFlag: string;
-  image: string;
-  trophyImage: string;
   region: Exclude<Region, 'All'>;
   champion: string;
   championFlag: string;
@@ -26,6 +24,11 @@ export type WorldCupEdition = {
   memorable: string;
   formatNote: string;
   hostCities?: string[];
+  historyImage?: string;
+  trophyImage?: string;
+  ballName?: string;
+  ballImage?: string;
+  ballNote?: string;
 };
 
 export type TimelineItem = {
@@ -46,25 +49,4 @@ export type HostPoint = {
   label: string;
   x: number;
   y: number;
-};
-
-export type UpcomingFixture = {
-  id: string;
-  date: string;
-  stage: string;
-  group?: string;
-  home: string;
-  away: string;
-  venue: string;
-  city: string;
-  status: 'scheduled' | 'live' | 'finished' | 'tbd';
-  highlight?: string;
-};
-
-export type UpcomingHighlight = {
-  title: string;
-  eyebrow: string;
-  date: string;
-  text: string;
-  image: string;
 };

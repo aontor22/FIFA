@@ -11,7 +11,7 @@ import { filterEditions } from '@/utils/search';
 import Header from '@/components/common/Header';
 import Hero from '@/components/hero/Hero';
 import Timeline from '@/components/history/Timeline';
-import ParallaxMemories from '@/components/visual/ParallaxMemories';
+import MemorableParallax from '@/components/history/MemorableParallax';
 import EditionExplorer from '@/components/editions/EditionExplorer';
 import EditionModal from '@/components/editions/EditionModal';
 import HostMap from '@/components/map/HostMap';
@@ -35,7 +35,7 @@ export default function HomePage() {
       <Header theme={theme} onThemeToggle={toggleTheme} />
       <Hero onOpenLatest={() => setSelectedCup(worldCups.find((cup) => cup.year === 2026) || null)} />
       <Timeline items={fifaTimeline} />
-      <ParallaxMemories />
+      <MemorableParallax />
       <EditionExplorer
         query={query}
         region={region}

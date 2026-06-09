@@ -1,25 +1,21 @@
-import { worldCups } from '@/data/worldCups';
 
 export default function TrophyEvolution() {
   return (
-    <article className="knowledge-card trophy-card trophy-gallery-card">
+    <article className="knowledge-card trophy-card trophy-card-real">
       <span className="eyebrow">Trophy story</span>
-      <h2>From the Jules Rimet era to the modern World Cup trophy era.</h2>
+      <h2>From the Jules Rimet Trophy to the modern FIFA World Cup Trophy.</h2>
       <p>
-        Every edition now includes a custom trophy illustration. These are original web-safe visuals, so the project avoids copyrighted official trophy photography while staying visually rich.
+        The original trophy era ended after Brazil’s third victory in 1970. The modern trophy era began in 1974 and continues today.
       </p>
-      <div className="trophy-era-row">
-        <div><strong>1930-1970</strong><span>Jules Rimet era</span></div>
-        <i />
-        <div><strong>1974-2026</strong><span>Modern trophy era</span></div>
-      </div>
-      <div className="trophy-gallery">
-        {worldCups.map((cup) => (
-          <figure key={cup.year}>
-            <img src={cup.trophyImage} alt={`${cup.year} trophy illustration`} />
-            <figcaption>{cup.year}</figcaption>
-          </figure>
-        ))}
+      <div className="trophy-real-layout">
+        <figure>
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/FIFA_World_Cup_Trophy_(Jules_Rimet_Trophy)_at_National_Football_Museum,_Manchester_01.jpg" alt="Jules Rimet Trophy" />
+          <figcaption>1930–1970 era</figcaption>
+        </figure>
+        <figure>
+          <img src="/media/world-cup-trophy-real.png" alt="Modern FIFA World Cup Trophy" />
+          <figcaption>1974–present era</figcaption>
+        </figure>
       </div>
     </article>
   );

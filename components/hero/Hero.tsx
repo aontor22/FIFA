@@ -30,7 +30,8 @@ export default function Hero({ onOpenLatest }: HeroProps) {
           <StatPill value={48} label="teams in 2026" />
         </div>
       </div>
-      <aside className="hero-panel">
+      <aside className="hero-panel hero-panel-visual">
+        <img src="/media/world-cup-2026-logo.png" alt="World Cup 2026 visual" className="hero-panel-logo" />
         <span className="status-badge">2026 tournament hub</span>
         <h2>Canada, Mexico and United States</h2>
         <p>Built for a live tournament experience with schedule, groups, city cards, and future results integration.</p>

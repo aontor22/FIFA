@@ -21,11 +21,9 @@ export default function Header({ theme, onThemeToggle }: HeaderProps) {
       <nav className={open ? 'nav open' : 'nav'} aria-label="Primary navigation">
         <a href="#history">History</a>
         <a href="#editions">Every Cup</a>
-        <a href="#memories">Memories</a>
         <a href="#map">Host Map</a>
         <a href="#records">Records</a>
         <a href="#2026">2026</a>
-        <a href="#schedule">Schedule</a>
         <a href="#sources">Sources</a>
       </nav>
       <ThemeToggle theme={theme} onToggle={onThemeToggle} />

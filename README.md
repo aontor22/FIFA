@@ -49,33 +49,14 @@ npm run start
 This is an unofficial educational/fan archive template. No official FIFA logos, photographs, mascots or protected tournament graphics are included. Verify tournament data again before publishing commercially, especially the live 2026 schedule, groups and match results.
 
 
-## New in this upgraded version
+## UI media upgrade
 
-- Custom illustrated image for every World Cup edition from 1930 to 2026
-- Custom trophy illustration for every edition
-- Cinematic parallax memorable-history section
-- Upcoming FIFA World Cup 2026 highlights
-- Auto-refreshing schedule module powered by `/api/fifa-schedule`
-- Optional external schedule feed through `FIFA_SCHEDULE_FEED_URL`
-- Enhanced edition cards and modals with images and trophy visuals
-- Cooler football-history background atmosphere
+This build replaces emoji/cartoon visuals with photo-based trophy and ball visuals. User-provided 2026 trophy/ball images are stored in `public/media`. The match-ball gallery uses verified official ball names and remote Wikimedia Commons file paths where available. Early editions use a safe photo fallback where close-up official ball photography is limited.
 
-## Auto-updating schedule setup
+## Live schedule feed
 
-The website works immediately with bundled fallback fixtures. For live or managed updates, add this environment variable in Vercel:
+The bundled `/api/fifa-schedule` route returns fallback fixtures by default. To connect an approved schedule provider, add this Vercel environment variable:
 
 ```bash
-FIFA_SCHEDULE_FEED_URL=https://your-approved-schedule-feed.example.com/fixtures.json
+FIFA_SCHEDULE_FEED_URL=https://your-approved-feed.example.com/fixtures.json
 ```
-
-The feed should return either an array of fixtures or an object shaped like:
-
-```json
-{ "fixtures": [] }
-```
-
-Each fixture supports: `id`, `date`, `stage`, `group`, `home`, `away`, `venue`, `city`, `status`, and `highlight`.
-
-## Media note
-
-The included images are original SVG illustrations created for this project. They are not official FIFA logos, official trophy photographs, player images, or copyrighted match photos. Replace them with licensed assets only if you have permission.

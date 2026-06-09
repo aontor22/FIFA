@@ -1,71 +1,51 @@
+
 'use client';
 
-import { useMemo, useState } from 'react';
-import { useUpcomingSchedule } from '@/hooks/useUpcomingSchedule';
+import { useEffect, useState } from 'react';
+import { upcomingFixtures } from '@/data/upcomingFixtures';
 
-const stages = ['All', 'Group stage', 'Round of 32', 'Final'];
-
-function formatDate(date: string) {
-  return new Intl.DateTimeFormat('en', {
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric',
-    hour: 'numeric',
-    minute: '2-digit'
-  }).format(new Date(date));
-}
+type Fixture = typeof upcomingFixtures[number];
 
 export default function UpcomingSchedule() {
-  const { fixtures, source, updatedAt, loading } = useUpcomingSchedule();
-  const [stage, setStage] = useState('All');
+  const [fixtures, setFixtures] = useState<Fixture[]>(upcomingFixtures);
+  const [updatedAt, setUpdatedAt] = useState<string>('bundled fallback');
 
-  const filtered = useMemo(() => {
-    return fixtures.filter((fixture) => stage === 'All' || fixture.stage === stage);
-  }, [fixtures, stage]);
+  useEffect(() => {
+    let active = true;
+    const load = async () => {
+      try {
+        const response = await fetch('/api/fifa-schedule', { cache: 'no-store' });
+        const data = await response.json();
+        if (active && Array.isArray(data.fixtures)) {
+          setFixtures(data.fixtures.slice(0, 8));
+          setUpdatedAt(new Date(data.updatedAt).toLocaleString());
+        }
+      } catch {}
+    };
+    load();
+    const interval = window.setInterval(load, 10 * 60 * 1000);
+    return () => { active = false; window.clearInterval(interval); };
+  }, []);
 
   return (
     <article className="tournament-card schedule-card">
       <div className="schedule-head">
         <div>
-          <span className="eyebrow">Auto-updating schedule</span>
-          <h3>Upcoming FIFA World Cup fixtures</h3>
-          <p>
-            This panel refreshes from <code>/api/fifa-schedule</code> every 10 minutes. Add a live feed URL in
-            <code> FIFA_SCHEDULE_FEED_URL </code> to auto-update from your own approved data provider.
-          </p>
+          <span className="status-badge">Auto update</span>
+          <h3>Upcoming FIFA schedule</h3>
         </div>
-        <div className="sync-pill">{loading ? 'Syncing…' : `Synced · ${source}`}</div>
+        <small>Updated: {updatedAt}</small>
       </div>
-
-      <div className="schedule-tabs">
-        {stages.map((item) => (
-          <button className={stage === item ? 'active' : ''} key={item} onClick={() => setStage(item)}>
-            {item}
-          </button>
-        ))}
-      </div>
-
-      <div className="fixture-list">
-        {filtered.map((fixture) => (
-          <div className="fixture-row" key={fixture.id}>
-            <div className="fixture-date">
-              <strong>{formatDate(fixture.date)}</strong>
-              <span>{fixture.stage}{fixture.group ? ` · ${fixture.group}` : ''}</span>
-            </div>
-            <div className="fixture-teams">
-              <strong>{fixture.home}</strong>
-              <span>vs</span>
-              <strong>{fixture.away}</strong>
-            </div>
-            <div className="fixture-venue">
-              <strong>{fixture.venue}</strong>
-              <span>{fixture.city}</span>
-            </div>
-            {fixture.highlight && <p>{fixture.highlight}</p>}
+      <div className="schedule-list">
+        {fixtures.map((fixture) => (
+          <div className="schedule-row" key={`${fixture.match}-${fixture.fixture}`}>
+            <strong>Match {fixture.match}</strong>
+            <span>{fixture.date} • {fixture.stage}</span>
+            <p>{fixture.fixture}</p>
+            <small>{fixture.venue}</small>
           </div>
         ))}
       </div>
-      <small>Last checked: {formatDate(updatedAt)}</small>
     </article>
   );
 }
