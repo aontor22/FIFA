@@ -1,4 +1,3 @@
-
 export type Region = 'All' | 'Europe' | 'South America' | 'North America' | 'Asia' | 'Africa' | 'Multiple Regions';
 
 export type WorldCupEdition = {
@@ -49,4 +48,19 @@ export type HostPoint = {
   label: string;
   x: number;
   y: number;
+};
+
+export type UpcomingFixture = {
+  match: number;
+  date: string;
+  time: string;
+  stage: string;
+  fixture: string;
+  venue: string;
+};
+
+export type UpcomingHighlight = {
+  title: string;
+  value: string;
+  note: string;
 };
