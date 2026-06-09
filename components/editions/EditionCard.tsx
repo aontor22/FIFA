@@ -1,4 +1,3 @@
-
 import type { WorldCupEdition } from '@/lib/types';
 import { formatNumber } from '@/utils/format';
 
@@ -9,7 +8,11 @@ type EditionCardProps = {
 
 export default function EditionCard({ cup, onSelect }: EditionCardProps) {
   return (
-    <button className="edition-card" onClick={onSelect}>
+    <button className="edition-card visual-edition-card" onClick={onSelect}>
+      <div className="edition-image">
+        <img src={cup.image} alt={`${cup.year} ${cup.host} World Cup history illustration`} />
+        <img className="edition-trophy-mini" src={cup.trophyImage} alt={`${cup.year} trophy illustration`} />
+      </div>
       <div className="edition-card-top">
         <span className="edition-year">{cup.year}</span>
         <span className="edition-flag">{cup.hostFlag}</span>

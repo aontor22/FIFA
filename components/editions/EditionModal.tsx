@@ -1,4 +1,3 @@
-
 'use client';
 
 import type { WorldCupEdition } from '@/lib/types';
@@ -12,8 +11,12 @@ type EditionModalProps = {
 export default function EditionModal({ cup, onClose }: EditionModalProps) {
   return (
     <div className="modal-backdrop" role="dialog" aria-modal="true" aria-label={`${cup.year} World Cup details`}>
-      <article className="edition-modal">
+      <article className="edition-modal visual-modal">
         <button className="close-button" onClick={onClose} aria-label="Close details">×</button>
+        <div className="modal-media">
+          <img src={cup.image} alt={`${cup.year} ${cup.host} illustrated World Cup history`} />
+          <img className="modal-trophy" src={cup.trophyImage} alt={`${cup.year} trophy illustration`} />
+        </div>
         <header className="modal-title">
           <span>{cup.hostFlag}</span>
           <div>
