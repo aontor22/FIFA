@@ -8,7 +8,7 @@ export default function MemorableParallax() {
         <span className="eyebrow">Memorable history</span>
         <h2>Maracanã shocks, Wembley drama, Total Football, Maradona magic, and modern final-night theatre.</h2>
         <p>
-          The design now uses real photo-based visuals, layered parallax motion, stadium lighting, and trophy/ball imagery instead of cartoon icons.
+          The design now uses newly generated cinematic trophy and ball visuals, layered parallax motion, stadium lighting, and history-inspired imagery instead of copied reference files.
         </p>
       </div>
     </section>

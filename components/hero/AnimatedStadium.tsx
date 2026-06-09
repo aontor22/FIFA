@@ -12,8 +12,8 @@ export default function AnimatedStadium() {
         <div className="pitch-line box-left" />
         <div className="pitch-line box-right" />
       </div>
-      <img className="floating-photo floating-trophy-img" src="/media/world-cup-trophy-real.png" alt="" />
-      <img className="floating-photo floating-ball-img" src="/media/world-cup-2026-ball-real.png" alt="" />
+      <img className="floating-photo floating-trophy-img" src="/media/generated/hero-trophy.svg" alt="" />
+      <img className="floating-photo floating-ball-img" src="/media/generated/hero-ball.svg" alt="" />
       <div className="light-beam" />
     </div>
   );

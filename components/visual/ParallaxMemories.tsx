@@ -21,7 +21,7 @@ export default function ParallaxMemories() {
       <SectionHeader
         eyebrow="Memorable history"
         title="A cinematic scroll through football’s most iconic World Cup eras."
-        description="Parallax cards use real photo-based trophy and ball visuals, host memories, final stories, and tournament records instead of emoji or placeholder graphics."
+        description="Parallax cards use generated realistic-style trophy and ball visuals, host memories, final stories, and tournament records instead of emoji or placeholder graphics."
       />
       <div className="memory-track">
         {memories.map((cup, index) => {

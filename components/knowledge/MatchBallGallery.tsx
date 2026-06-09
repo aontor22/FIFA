@@ -5,9 +5,9 @@ export default function MatchBallGallery() {
   return (
     <article className="knowledge-card match-ball-gallery">
       <span className="eyebrow">Official match balls</span>
-      <h2>Every World Cup ball, shown with real image slots.</h2>
+      <h2>Every World Cup ball, shown with generated image slots.</h2>
       <p>
-        The gallery lists the official match ball identity for each edition. Modern editions use direct real ball images, while early editions use safe public-domain style photo slots when verified close-up photos are limited.
+        The gallery lists the official match ball identity for each edition. Each edition uses a locally generated visual inspired by the official match-ball identity, avoiding direct copied reference images.
       </p>
       <div className="ball-gallery-grid">
         {editionMedia.map((item) => (

@@ -51,7 +51,7 @@ This is an unofficial educational/fan archive template. No official FIFA logos, 
 
 ## UI media upgrade
 
-This build replaces emoji/cartoon visuals with photo-based trophy and ball visuals. User-provided 2026 trophy/ball images are stored in `public/media`. The match-ball gallery uses verified official ball names and remote Wikimedia Commons file paths where available. Early editions use a safe photo fallback where close-up official ball photography is limited.
+This build replaces emoji/cartoon visuals and copied reference files with newly generated local SVG assets in `public/media/generated`. The match-ball gallery uses official ball names with generated visual approximations, so no uploaded reference image is directly embedded in the project.
 
 ## Live schedule feed
 
