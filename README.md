@@ -60,3 +60,9 @@ The bundled `/api/fifa-schedule` route returns fallback fixtures by default. To 
 ```bash
 FIFA_SCHEDULE_FEED_URL=https://your-approved-feed.example.com/fixtures.json
 ```
+
+## Vercel install timeout fix
+
+This package includes a public npm registry `.npmrc` and a cleaned `package-lock.json` so Vercel installs packages from `https://registry.npmjs.org/` instead of any local/internal development registry.
+
+If Vercel still uses an older cached dependency state, redeploy once with **Use existing Build Cache** unchecked.
