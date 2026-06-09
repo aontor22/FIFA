@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800" role="img" aria-label="Custom trophy illustration for World Cup 1938">
+  <defs>
+    <linearGradient id="gold" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#fff2b8"/><stop offset="0.42" stop-color="#e8c86e"/><stop offset="1" stop-color="#9a6a1e"/></linearGradient>
+    <radialGradient id="bg" cx="50%" cy="34%" r="58%"><stop stop-color="#38bdf8" stop-opacity="0.28"/><stop offset="1" stop-color="#07111f"/></radialGradient>
+    <filter id="s"><feDropShadow dx="0" dy="30" stdDeviation="26" flood-color="#000" flood-opacity="0.42"/></filter>
+  </defs>
+  <rect width="800" height="800" rx="80" fill="url(#bg)"/>
+  <circle cx="400" cy="270" r="210" fill="#fff" opacity="0.05"/>
+  <g filter="url(#s)">
+    <path d="M312 160 C246 164 216 206 226 262 C236 326 280 348 326 356 C332 396 350 432 378 456 L378 560 H306 C280 560 258 582 258 610 V642 H542 V610 C542 582 520 560 494 560 H422 V456 C450 432 468 396 474 356 C520 348 564 326 574 262 C584 206 554 164 488 160 C478 139 444 122 400 122 C356 122 322 139 312 160Z" fill="url(#gold)"/>
+    <path d="M310 196 C274 198 258 220 264 254 C270 289 292 308 322 316" fill="none" stroke="#fff4bf" stroke-width="20" stroke-linecap="round" opacity="0.72"/>
+    <path d="M490 196 C526 198 542 220 536 254 C530 289 508 308 478 316" fill="none" stroke="#fff4bf" stroke-width="20" stroke-linecap="round" opacity="0.72"/>
+    <path d="M338 612 H462" stroke="#5a3d11" stroke-width="20" stroke-linecap="round" opacity="0.45"/>
+  </g>
+  <text x="400" y="705" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="900" fill="#fff">1938</text>
+  <text x="400" y="748" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="800" fill="#fff" opacity="0.68">Jules Rimet era</text>
+</svg>
